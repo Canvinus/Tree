@@ -11,15 +11,16 @@ class MutableNode<T extends Number> implements Node<T> {
     }
 
     void setChildren(Collection<MutableNode<T>> children){
-
+        this.children.clear();
+        this.children.addAll(children);
     }
 
     void addChild(MutableNode<T> child){
-
+        this.children.add(child);
     }
 
     void removeChild(MutableNode<T> child){
-
+        this.children.remove(child);
     }
 
     public Node<T> getParent(){

@@ -3,8 +3,13 @@ import java.util.function.Function;
 
 class ImmutableNode<T extends  Number> implements Node<T> {
 
-    public ImmutableNode(T value, ImmutableNode<T> parent, Function<ImmutableNode<T>, Collection<? extends Node<T>>> childrenConstructor){
+    public ImmutableNode(T value, ImmutableNode<T> parent, Collection<ImmutableNode<T>> childrenConstructor){
 
+        this.value = value;
+
+        this.parent = parent;
+
+        this.children.addAll(childrenConstructor);
     }
 
 
@@ -18,6 +23,10 @@ class ImmutableNode<T extends  Number> implements Node<T> {
 
     public void print(int indents){
 
+    }
+
+    public T getValue(){
+        return  value;
     }
 
     T value;
