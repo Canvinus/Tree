@@ -1,6 +1,18 @@
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 class MutableNode<T extends Number> implements Node<T> {
+
+    public MutableNode(T value, MutableNode<T> parent, Collection<MutableNode<T>> children){
+
+        this.setValue(value);
+        this.setParent(parent);
+        if(children == null)
+            this.children = new ArrayList<>();
+        else
+            this.setChildren(children);
+    }
 
     void setValue(T value){
         this.value = value;
@@ -33,6 +45,11 @@ class MutableNode<T extends Number> implements Node<T> {
 
     public void print(int indents){
 
+        for(int i = 0;i<indents;i++) {
+            System.out.print(" ");
+        }
+        System.out.print(this.getValue());
+
     }
 
     public T getValue(){
@@ -43,5 +60,5 @@ class MutableNode<T extends Number> implements Node<T> {
 
     MutableNode<T> parent;
 
-    Collection<Node<T>> children;
+    Collection<Node<T>> children = new ArrayList<>();
 }

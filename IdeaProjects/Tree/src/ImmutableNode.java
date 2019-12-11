@@ -23,6 +23,11 @@ class ImmutableNode<T extends  Number> implements Node<T> {
 
     public void print(int indents){
 
+        for(int i = 0;i<indents;i++) {
+            System.out.print(" ");
+            System.out.println(this.getValue());
+        }
+
     }
 
     public T getValue(){

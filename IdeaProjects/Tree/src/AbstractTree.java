@@ -8,7 +8,7 @@ abstract class AbstractTree<T extends Number> {
     }
 
     int getSize(){
-        return 0;
+        return root.getChildren().size();
     }
 
     T getSum(){
